@@ -53,3 +53,18 @@ export interface ResearchIdea {
     description: string;
     keywords: string[];
 }
+
+export interface Publication {
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  url: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  title: string;
+  imageUrl: string;
+}

@@ -7,6 +7,8 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
+import Publications from './components/Publications';
+import Testimonials from './components/Testimonials';
 import ResearchIdeaGenerator from './components/ResearchIdeaGenerator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -220,7 +222,7 @@ const App: React.FC = () => {
 
   // Scroll spy for LocalNav visibility and active link highlighting
   useEffect(() => {
-      const sectionIds = ['home', 'about', 'experience', 'education', 'skills', 'certifications', 'projects', 'contact'];
+      const sectionIds = ['home', 'about', 'experience', 'education', 'skills', 'certifications', 'projects', 'publications', 'testimonials', 'research-generator', 'contact'];
       const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
 
       if (sections.length === 0) return;
@@ -264,6 +266,8 @@ const App: React.FC = () => {
         <Skills />
         <Certifications />
         <Projects onProjectSelect={setSelectedProject} onShowDetailPage={setDetailedProject} />
+        <Publications />
+        <Testimonials />
         <ResearchIdeaGenerator />
         <Contact />
       </main>
