@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags (populated by script) -->
+    <title>Arignan S - Engineering Portfolio</title>
+    <meta name="description" content="A personal portfolio website for an engineering student specializing in AI, Robotics, and Computer Engineering, showcasing projects, skills, and research interests to attract job opportunities.">
+    
+    <script>
+      // SEO metadata loader
+      (async function() {
+        try {
+          const response = await fetch('/metadata.json');
+          if (!response.ok) return; // Fail gracefully if metadata is not found
+          const metadata = await response.json();
+          if (metadata.name) {
+            document.title = `Arignan S - ${metadata.name}`;
+          }
+          if (metadata.description) {
+            const descTag = document.querySelector('meta[name="description"]');
+            if (descTag) {
+              descTag.setAttribute('content', metadata.description);
+            }
+          }
+        } catch (e) {
+          console.error('Failed to update metadata.', e);
+        }
+      })();
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script>
+      // Prevents FOUC (Flash of Unstyled Content) for theme
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          // 1. Check for stored theme
+          // 2. If no stored theme, check system preference
+          // 3. Default to light
+          var isDarkMode = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
+    <style>
+      html {
+        scroll-padding-top: 6rem; /* Adjust for LocalNav height */
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .section-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .section-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+       @keyframes progressBar {
+        from { width: 0%; }
+        to { width: 100%; }
+      }
+      @keyframes stroke-draw {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes slide-in-from-right {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+      }
+      @keyframes slide-out-to-right {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
+      }
+      .animate-slide-in {
+        animation: slide-in-from-right 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      .animate-slide-out {
+        animation: slide-out-to-right 0.5s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+      }
+      .animate-stroke-draw {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
+      /* This is the key change: the animation is now triggered by the parent's visibility */
+      .section-fade-in.visible .animate-stroke-draw {
+        animation: stroke-draw 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      .animate-scale-in {
+        animation: scaleIn 0.3s ease-out forwards;
+      }
+       .progress-bar-animate {
+        animation-name: progressBar;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+
+      /* Staggered animation for child elements */
+      .stagger-children > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition-delay: var(--stagger-delay);
+      }
+      .section-fade-in.visible .stagger-children > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .grid-fade-in .stagger-children > * {
+         opacity: 1;
+        transform: translateY(0);
+      }
+      .grid-fade-in .stagger-children > *:nth-child(1) { transition-delay: 0.1s; }
+      .grid-fade-in .stagger-children > *:nth-child(2) { transition-delay: 0.15s; }
+      .grid-fade-in .stagger-children > *:nth-child(3) { transition-delay: 0.2s; }
+      .grid-fade-in .stagger-children > *:nth-child(4) { transition-delay: 0.25s; }
+      .grid-fade-in .stagger-children > *:nth-child(5) { transition-delay: 0.3s; }
+      .grid-fade-in .stagger-children > *:nth-child(6) { transition-delay: 0.35s; }
+      
+      /* Stagger animation for skill tags */
+      .stagger-tags-in > * {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+        transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .section-fade-in.visible .stagger-tags-in > * {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(1) { transition-delay: 0.30s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(2) { transition-delay: 0.35s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(3) { transition-delay: 0.40s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(4) { transition-delay: 0.45s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(5) { transition-delay: 0.50s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(6) { transition-delay: 0.55s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(7) { transition-delay: 0.60s; }
+      .section-fade-in.visible .stagger-tags-in > *:nth-child(8) { transition-delay: 0.65s; }
+      
+      .grid-fade-out {
+        animation: fadeOut 0.2s ease-in forwards;
+      }
+      .grid-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
+      /* Code Snippet Styles */
+      .code-snippet pre {
+        background-color: #0c1322 !important;
+        color: #cdd9e5;
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      .code-snippet .token.keyword { color: #ff7b72; }
+      .code-snippet .token.function { color: #d2a8ff; }
+      .code-snippet .token.string { color: #a5d6ff; }
+      .code-snippet .token.comment { color: #8b949e; }
+      .code-snippet .token.number { color: #79c0ff; }
+      .code-snippet .token.class-name, .code-snippet .token.maybe-class-name { color: #ffa657; }
+      .code-snippet .token.punctuation { color: #8b949e; }
+      .code-snippet .token.operator { color: #ff7b72; }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
