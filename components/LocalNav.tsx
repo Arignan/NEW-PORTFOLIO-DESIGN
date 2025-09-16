@@ -113,13 +113,6 @@ const LocalNav: React.FC<LocalNavProps> = ({ isVisible, activeSection }) => {
                         </a>
                     ))}
                 </div>
-                <a 
-                    href="/arignan-g-cv.pdf" 
-                    download 
-                    className="bg-slate-800 dark:bg-slate-200 text-white dark:text-black text-sm font-semibold px-4 py-2 rounded-full hover:bg-black dark:hover:bg-white transition-colors duration-300"
-                >
-                    Download CV
-                </a>
             </div>
         </div>
     </nav>
