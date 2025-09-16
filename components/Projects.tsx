@@ -17,7 +17,7 @@ const projectsData: Project[] = [
     videoUrl: 'https://www.youtube.com/embed/gfkBBb_wM1c',
     tags: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
     imageUrl: 'https://images.unsplash.com/photo-1618398182914-3b8417943f11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/',
+    repoUrl: 'https://github.com/arignan/',
     gallery: [
       'https://images.unsplash.com/photo-1588666301416-7c917b019b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
       'https://images.unsplash.com/photo-1618398182914-3b8417943f11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
@@ -80,7 +80,7 @@ cv2.destroyAllWindows()`
     challenges: 'Achieving robust localization and mapping in dynamic environments with changing obstacles. Fine-tuning the navigation stack parameters in ROS for smooth and efficient path planning.',
     tags: ['ROS', 'Python', 'C++', 'Raspberry Pi', 'SLAM'],
     imageUrl: 'https://images.unsplash.com/photo-1614275055315-9a883758b2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
    {
     title: 'RL-Powered Robotic Grasping',
@@ -89,7 +89,7 @@ cv2.destroyAllWindows()`
     challenges: 'Bridging the "sim-to-real" gap, ensuring that the grasping policies learned in the PyBullet simulation could be successfully transferred to a physical robotic arm with minimal retraining.',
     tags: ['Reinforcement Learning', 'PyTorch', 'ROS', 'Python', 'Simulation'],
     imageUrl: 'https://images.unsplash.com/photo-1581092918458-48f32325b084?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: '3D Mapping with LiDAR',
@@ -98,7 +98,7 @@ cv2.destroyAllWindows()`
     challenges: 'Achieving accurate loop closure in large, feature-poor environments, which is critical for creating globally consistent maps. Onboard processing on the Jetson Nano required significant optimization of the SLAM algorithm.',
     tags: ['LiDAR', 'SLAM', 'C++', 'ROS', 'Jetson Nano'],
     imageUrl: 'https://images.unsplash.com/photo-1678385533339-e854893c52a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Predictive Maintenance for Industrial Motors',
@@ -107,7 +107,7 @@ cv2.destroyAllWindows()`
     challenges: 'Dealing with noisy sensor data and identifying the most predictive features for motor failure. The LSTM model required careful hyperparameter tuning to avoid overfitting and accurately capture long-term dependencies.',
     tags: ['ML', 'PyTorch', 'LSTM', 'IoT', 'Pandas'],
     imageUrl: 'https://images.unsplash.com/photo-1569894111029-e1a12c141e6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Automated Crop Monitoring Drone',
@@ -116,7 +116,7 @@ cv2.destroyAllWindows()`
     challenges: 'Ensuring stable flight and consistent data capture in varying wind and lighting conditions. Real-time image processing on the Jetson Nano required an efficient computer vision pipeline to avoid latency.',
     tags: ['Computer Vision', 'Drones', 'Python', 'IoT', 'Jetson Nano'],
     imageUrl: 'https://images.unsplash.com/photo-1599493356238-2a7852c43d70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'IoT Smart Home System',
@@ -126,7 +126,7 @@ cv2.destroyAllWindows()`
     tags: ['IoT', 'ESP32', 'React', 'Node.js', 'MQTT'],
     imageUrl: 'https://images.unsplash.com/photo-1596213329938-333a4115167b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
     liveUrl: '#',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Gesture Control Interface',
@@ -135,7 +135,7 @@ cv2.destroyAllWindows()`
     challenges: 'Creating a robust and intuitive gesture vocabulary that minimized false positives and was easy for users to learn. Ensuring real-time performance with minimal latency between gesture and system response.',
     tags: ['OpenCV', 'MediaPipe', 'Python', 'IoT', 'UI/UX'],
     imageUrl: 'https://images.unsplash.com/photo-1587738035343-7f71f6ae452c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Swarm Robotics Simulation',
@@ -144,7 +144,7 @@ cv2.destroyAllWindows()`
     challenges: 'Tuning the local interaction rules (cohesion, separation, alignment) to achieve stable and effective global swarm behavior without a central controller, which required iterative experimentation.',
     tags: ['Python', 'Simulation', 'AI', 'Multi-Agent Systems'],
     imageUrl: 'https://images.unsplash.com/photo-1635224991732-8e755243146b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'GAN for Synthetic Data Generation',
@@ -153,7 +153,7 @@ cv2.destroyAllWindows()`
     challenges: 'Achieving stable training and avoiding common failure modes like mode collapse, where the generator produces only a limited variety of samples. This required careful selection of hyperparameters and network architecture.',
     tags: ['GAN', 'PyTorch', 'Deep Learning', 'Computer Vision'],
     imageUrl: 'https://images.unsplash.com/photo-1677442135703-178e31379f83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Voice-Controlled Smart Wheelchair',
@@ -162,7 +162,7 @@ cv2.destroyAllWindows()`
     challenges: 'Implementing a reliable speech recognition model on a resource-constrained microcontroller (ESP32) while ensuring low latency and high accuracy in noisy environments.',
     tags: ['IoT', 'ESP32', 'C++', 'Assistive Tech', 'ML'],
     imageUrl: 'https://images.unsplash.com/photo-1508612583868-2b73f49372e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
   {
     title: 'Real-time Object Tracking with Kalman Filters',
@@ -171,7 +171,7 @@ cv2.destroyAllWindows()`
     challenges: 'Accurately modeling the object\'s motion dynamics and tuning the Kalman Filter\'s noise covariance parameters (Q and R) to achieve a balance between responsiveness and smoothness in the tracking output.',
     tags: ['C++', 'OpenCV', 'Computer Vision', 'Kalman Filter'],
     imageUrl: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    repoUrl: 'https://github.com/ArignanG/'
+    repoUrl: 'https://github.com/arignan/'
   },
 ];
 

@@ -21,13 +21,13 @@ const Contact: React.FC = () => {
                 </a>
             </Tooltip>
             <Tooltip text="View LinkedIn Profile">
-                <a href="https://linkedin.com/in/arignang" target="_blank" rel="noopener noreferrer" className="bg-slate-200 dark:bg-slate-800 border border-transparent rounded-full p-4 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-700 transition-all duration-300">
+                <a href="https://www.linkedin.com/in/arignansritharan/" target="_blank" rel="noopener noreferrer" className="bg-slate-200 dark:bg-slate-800 border border-transparent rounded-full p-4 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-700 transition-all duration-300">
                     <LinkedInIcon className="w-7 h-7" />
                     <span className="sr-only">LinkedIn</span>
                 </a>
             </Tooltip>
             <Tooltip text="View GitHub Profile">
-                <a href="https://github.com/ArignanG" target="_blank" rel="noopener noreferrer" className="bg-slate-200 dark:bg-slate-800 border border-transparent rounded-full p-4 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-700 transition-all duration-300">
+                <a href="https://github.com/arignan" target="_blank" rel="noopener noreferrer" className="bg-slate-200 dark:bg-slate-800 border border-transparent rounded-full p-4 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white hover:bg-slate-300 dark:hover:bg-slate-700 transition-all duration-300">
                     <GitHubIcon className="w-7 h-7" />
                     <span className="sr-only">GitHub</span>
                 </a>
