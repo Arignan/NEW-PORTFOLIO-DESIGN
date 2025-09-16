@@ -14,23 +14,35 @@ interface ProjectDetailPageProps {
 
 const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, onClose, onCloseAnimationComplete, isClosing }) => {
     
-    // Lock body scroll when the detail page is open
+    // Dynamically update meta tags for SEO and user experience
     useEffect(() => {
+        const originalTitle = document.title;
+        const metaDescription = document.querySelector('meta[name="description"]');
+        const originalDescription = metaDescription ? metaDescription.getAttribute('content') : '';
+
+        document.title = `${project.title} | Arignan S Portfolio`;
+        if (metaDescription) {
+            metaDescription.setAttribute('content', project.description);
+        }
+
+        // Lock body scroll
         const originalOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
-        
-        // Scroll this component to the top on mount
+
         const pageElement = document.getElementById('project-detail-page');
         if(pageElement) pageElement.scrollTop = 0;
 
+        // Cleanup function
         return () => {
+            document.title = originalTitle;
+            if (metaDescription && originalDescription) {
+                metaDescription.setAttribute('content', originalDescription);
+            }
             document.body.style.overflow = originalOverflow;
         };
-    }, []);
+    }, [project]);
 
     const handleAnimationEnd = (e: React.AnimationEvent<HTMLDivElement>) => {
-        // This event fires for both slide-in and slide-out animations.
-        // We only want to trigger the unmount after the slide-out animation is complete.
         if (e.animationName === 'slide-out-to-right') {
             onCloseAnimationComplete();
         }
@@ -40,16 +52,35 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ project, onClose,
     const hasTechnicalDetails = project.technicalDetails && project.technicalDetails.length > 0;
     const hasCodeSnippet = project.codeSnippet;
 
+    const projectSchema = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": project.title,
+      "description": project.detailedDescription,
+      "author": {
+        "@type": "Person",
+        "name": "Arignan S"
+      },
+      "keywords": project.tags.join(", "),
+      ...(project.repoUrl && { "codeRepository": project.repoUrl }),
+      ...(project.liveUrl && { "url": project.liveUrl }),
+      "image": project.imageUrl,
+    };
+
     return (
         <div 
             id="project-detail-page"
-            className={`fixed inset-0 bg-slate-100 dark:bg-slate-950 z-60 overflow-y-auto ${isClosing ? 'animate-slide-out' : 'animate-slide-in'}`}
+            className={`fixed inset-0 bg-slate-100 dark:bg-slate-900 z-50 overflow-y-auto ${isClosing ? 'animate-slide-out' : 'animate-slide-in'}`}
             onAnimationEnd={handleAnimationEnd}
             role="dialog"
             aria-modal="true"
             aria-labelledby="project-detail-title"
         >
-            <header className="sticky top-0 z-20 bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
+            <script type="application/ld+json">
+              {JSON.stringify(projectSchema)}
+            </script>
+
+            <header className="sticky top-0 z-20 bg-slate-100/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
                  <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                      <button 
                         onClick={onClose}
